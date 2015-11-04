@@ -1,12 +1,10 @@
 <?php
-
-//Implement a hook_menu
-
 function mymodule_menu() {
     $items['path-to-ajax/%/%'] = array(
-      'access arguments' => 'mymodule_ajax_callback',
-      'page arguments' => array(1,2),
-      'type' => MENU_CALLBACKm
-  );
-  return $items
+            'access arguments' => array('access content'),
+            'page callback' => 'mymodule_ajax_callback',
+            'page arguments' => array(1,2),
+            'type' => MENU_CALLBACK,
+    );
+    return $items;
 }
